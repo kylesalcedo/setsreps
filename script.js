@@ -36,4 +36,29 @@ document.addEventListener("DOMContentLoaded", function() {
             repsCounter.textContent = repsCount;
         }
     });
+
+    // Sets x Time Counter
+    const timeCounter = document.getElementById("time");
+    const incrementTimeButton = document.getElementById("incrementTime");
+    const decrementTimeButton = document.getElementById("decrementTime");
+
+    let timeCount = 0;
+
+    incrementTimeButton.addEventListener("click", function() {
+        timeCount++;
+        updateTimeDisplay();
+    });
+
+    decrementTimeButton.addEventListener("click", function() {
+        if (timeCount > 0) {
+            timeCount--;
+            updateTimeDisplay();
+        }
+    });
+
+    function updateTimeDisplay() {
+        const minutes = Math.floor(timeCount / 60);
+        const seconds = timeCount % 60;
+        timeCounter.textContent = `${minutes}:${seconds.toString().padStart(2, "0")}`;
+    }
 });
