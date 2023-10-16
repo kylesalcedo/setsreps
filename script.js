@@ -1,13 +1,45 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Sets Counter
-    // ...
+    const setsCounter = document.getElementById("sets");
+    const incrementSetsButton = document.getElementById("incrementSets");
+    const decrementSetsButton = document.getElementById("decrementSets");
+
+    let setsCount = 0;
+
+    incrementSetsButton.addEventListener("click", function() {
+        setsCount++;
+        setsCounter.textContent = setsCount;
+    });
+
+    decrementSetsButton.addEventListener("click", function() {
+        if (setsCount > 0) {
+            setsCount--;
+            setsCounter.textContent = setsCount;
+        }
+    });
 
     // Reps Counter
-    // ...
+    const repsCounter = document.getElementById("reps");
+    const incrementRepsButton = document.getElementById("incrementReps");
+    const decrementRepsButton = document.getElementById("decrementReps");
+
+    let repsCount = 0;
+
+    incrementRepsButton.addEventListener("click", function() {
+        repsCount++;
+        repsCounter.textContent = repsCount;
+    });
+
+    decrementRepsButton.addEventListener("click", function() {
+        if (repsCount > 0) {
+            repsCount--;
+            repsCounter.textContent = repsCount;
+        }
+    });
 
     // Sets x Time Counter
     const timeCounter = document.getElementById("time");
-    const incrementTimeButton = document.getElementById("incrementTime");
+    const incrementTime15Button = document.getElementById("incrementTime15");
     const decrementTimeButton = document.getElementById("decrementTime");
     const toggleTimerButton = document.getElementById("toggleTimer");
     const timerIcon = document.getElementById("timerIcon");
@@ -15,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let timeCount = 0;
     let timerInterval;
 
-    incrementTimeButton.addEventListener("click", function() {
+    incrementTime15Button.addEventListener("click", function() {
         timeCount += 15; // Increase by 15 seconds
         updateTimeDisplay();
     });
