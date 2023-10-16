@@ -41,18 +41,33 @@ document.addEventListener("DOMContentLoaded", function() {
     const timeCounter = document.getElementById("time");
     const incrementTimeButton = document.getElementById("incrementTime");
     const decrementTimeButton = document.getElementById("decrementTime");
+    const startTimerButton = document.getElementById("startTimer");
 
     let timeCount = 0;
+    let timerInterval;
 
     incrementTimeButton.addEventListener("click", function() {
-        timeCount++;
+        timeCount += 15; // Increase by 15 seconds
         updateTimeDisplay();
     });
 
     decrementTimeButton.addEventListener("click", function() {
         if (timeCount > 0) {
-            timeCount--;
+            timeCount -= 15; // Decrease by 15 seconds
             updateTimeDisplay();
+        }
+    });
+
+    startTimerButton.addEventListener("click", function() {
+        if (!timerInterval) {
+            timerInterval = setInterval(function() {
+                if (timeCount > 0) {
+                    timeCount--;
+                    updateTimeDisplay();
+                } else {
+                    clearInterval(timerInterval);
+                }
+            }, 1000); // Decrease by 1 second per second
         }
     });
 
