@@ -37,6 +37,25 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    // Sets x Reps Counter
+    const setsRepsCounter = document.getElementById("setsReps");
+    const incrementSetsRepsButton = document.getElementById("incrementSetsReps");
+    const decrementSetsRepsButton = document.getElementById("decrementSetsReps");
+
+    let setsRepsCount = 0;
+
+    incrementSetsRepsButton.addEventListener("click", function() {
+        setsRepsCount++;
+        setsRepsCounter.textContent = setsRepsCount;
+    });
+
+    decrementSetsRepsButton.addEventListener("click", function() {
+        if (setsRepsCount > 0) {
+            setsRepsCount--;
+            setsRepsCounter.textContent = setsRepsCount;
+        }
+    });
+
     function updateTimeDisplay() {
         const minutes = Math.floor(timeCount / 60);
         const seconds = timeCount % 60;
