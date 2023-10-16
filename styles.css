@@ -29,6 +29,11 @@ main {
     padding: 20px;
 }
 
+/* Counter Title */
+.counter .counter-title {
+    font-size: 24px;
+}
+
 /* Sets x Reps Counter */
 .counter {
     display: flex;
