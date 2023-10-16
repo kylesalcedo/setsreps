@@ -13,7 +13,7 @@
     </header>
     <main>
         <!-- Sets Counter -->
-        <div class="counter">
+        <div class="counter" title="Sets">
             <div class="counter-controls">
                 <button id="decrementSets">-</button>
                 <span id="sets">0</span>
@@ -21,7 +21,7 @@
             </div>
         </div>
         <!-- Reps Counter -->
-        <div class="counter">
+        <div class="counter" title="Reps">
             <div class="counter-controls">
                 <button id="decrementReps">-</button>
                 <span id="reps">0</span>
@@ -30,13 +30,14 @@
         </div>
         <!-- Sets x Time Counter -->
         <div class="counter">
-            <h2>Sets x Time</h2>
+            <h2 class="counter-title">Time</h2>
             <div class="counter-controls">
                 <button id="decrementTime">-</button>
                 <span id="time">0:00</span>
-                <button id="incrementTime">+</button>
+                <button id="toggleTimer">
+                    <i id="timerIcon" class="far fa-play-circle"></i> <!-- Start icon -->
+                </button>
             </div>
-            <button id="startTimer">Start Timer</button>
         </div>
     </main>
     <!-- Add your JavaScript script here -->
