@@ -48,15 +48,14 @@ document.addEventListener("DOMContentLoaded", function() {
     let timerInterval;
 
     incrementTime15Button.addEventListener("click", function() {
-        timeCount += 15; // Increase by 15 seconds
+        timeCount += 15;
         updateTimeDisplay();
     });
 
     decrementTimeButton.addEventListener("click", function() {
-        if (timeCount > 0) {
-            timeCount -= 15; // Decrease by 15 seconds
-            updateTimeDisplay();
-        }
+        // Change this code to reset the time to 0:00
+        timeCount = 0;
+        updateTimeDisplay();
     });
 
     toggleTimerButton.addEventListener("click", function() {
@@ -67,15 +66,15 @@ document.addEventListener("DOMContentLoaded", function() {
                     updateTimeDisplay();
                 } else {
                     clearInterval(timerInterval);
-                    timerInterval = null; // Reset the interval
-                    timerIcon.className = "far fa-play-circle"; // Change to Start icon
+                    timerInterval = null;
+                    timerIcon.className = "far fa-play-circle";
                 }
-            }, 1000); // Decrease by 1 second per second
-            timerIcon.className = "far fa-pause-circle"; // Change to Pause icon
+            }, 1000);
+            timerIcon.className = "far fa-pause-circle";
         } else {
             clearInterval(timerInterval);
-            timerInterval = null; // Reset the interval
-            timerIcon.className = "far fa-play-circle"; // Change to Start icon
+            timerInterval = null;
+            timerIcon.className = "far fa-play-circle";
         }
     });
 
