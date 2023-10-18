@@ -110,3 +110,10 @@ main {
         max-width: none;
     }
 }
+
+/* Add this CSS in your styles.css or within a media query for mobile devices */
+@media (max-width: 768px) {
+    body {
+        overflow: hidden;
+    }
+}
