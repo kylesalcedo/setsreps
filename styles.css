@@ -67,6 +67,11 @@ main {
     margin: 0 10px;
 }
 
+/* Adjust the font size for the "+15" button */
+#incrementTime15 {
+    font-size: 16px;
+}
+
 .counter span {
     font-size: 20px;
     font-weight: bold;
